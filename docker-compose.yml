@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  mysql_alocacao:
+    container_name: mysql_alocacao
+    image: mysql:8.0.23
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ALOCACAO_ROOT
+      MYSQL_USER: $MYSQL_ALOCACAO_USER
+      MYSQL_PASSWORD: $MYSQL_ALOCACAO_PASS
+    ports:
+      - 3307:3306
+    volumes:
+      - ./scripts/ddl.sql:/docker-entrypoint-initdb.d/1.sql
+      - mysql_alocacao_data_container:/var/lib/mysql
+    networks:
+      - backend
+
+volumes:
+  mysql_alocacao_data_container:
+networks:
+  backend:
+    driver: bridge
