@@ -6,7 +6,7 @@ package br.com.jlrodrol.catalogoprodutos.productms.application.exception;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public class ListarProductsException extends RuntimeException {
 

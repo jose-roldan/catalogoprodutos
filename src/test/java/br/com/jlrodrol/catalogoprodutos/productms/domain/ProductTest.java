@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public class ProductTest {
 

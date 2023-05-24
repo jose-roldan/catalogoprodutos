@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @AllArgsConstructor
 public class IncluirProductService implements IncluirProductUseCase {

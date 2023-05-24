@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public class ListarProductsFilterServiceTest {
 

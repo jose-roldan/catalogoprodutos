@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public interface ListarProductsOutPort {
 

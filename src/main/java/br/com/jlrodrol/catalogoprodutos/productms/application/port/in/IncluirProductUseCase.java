@@ -8,7 +8,7 @@ import br.com.jlrodrol.catalogoprodutos.productms.application.domain.entity.Prod
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public interface IncluirProductUseCase {
 

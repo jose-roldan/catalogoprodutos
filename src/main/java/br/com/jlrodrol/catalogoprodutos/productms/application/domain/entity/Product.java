@@ -12,7 +12,7 @@ import lombok.Getter;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @EqualsAndHashCode
 @Getter

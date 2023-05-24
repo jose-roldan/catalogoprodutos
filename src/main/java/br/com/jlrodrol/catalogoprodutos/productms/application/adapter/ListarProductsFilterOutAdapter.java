@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @AllArgsConstructor
 public class ListarProductsFilterOutAdapter implements ListarProductsFilterOutPort {

@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @Slf4j
 @Validated
@@ -128,9 +128,24 @@ public class ProductApiController {
     public ResponseEntity<List<ProductDTO>> listarProductsFilter(@RequestParam(required = false) BigDecimal min_price, @RequestParam(required = false) BigDecimal max_price, @RequestParam(required = false) String q) {
 
         log.info("listarProductsFilter");
-        log.info("q [" + q + "]");
-        log.info("min_price [" + min_price.toString() + "]");
 
+        if (q != null) {
+            log.info("q [" + q + "]");
+        } else {
+            log.info("q null");
+        }
+
+        if (min_price != null) {
+            log.info("min_price [" + min_price.toString() + "]");
+        } else {
+            log.info("min_price null");
+        }
+
+        if (max_price != null) {
+            log.info("min_price [" + max_price.toString() + "]");
+        } else {
+            log.info("min_price null");
+        }
 
         List<Product> resultado = listarProductsFilterService.listarFilter(q, min_price, max_price);
 

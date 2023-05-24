@@ -6,7 +6,7 @@ package br.com.jlrodrol.catalogoprodutos.productms.application.port.out;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public interface RemoverProductOutPort {
 

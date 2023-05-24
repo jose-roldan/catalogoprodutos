@@ -4,8 +4,11 @@
  */
 package br.com.jlrodrol.catalogoprodutos.productms.infra.persistence.jpa.repository;
 
+import br.com.jlrodrol.catalogoprodutos.productms.application.domain.entity.Product;
 import br.com.jlrodrol.catalogoprodutos.productms.infra.persistence.jpa.model.ProductModel;
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
@@ -15,7 +18,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @Slf4j
 @Repository
@@ -25,7 +28,7 @@ public class ProductJPARepositoryCustomImpl implements ProductJPARepositoryCusto
     private EntityManager entityManager;
 
     @Override
-    public List<ProductModel> findRuleByParameters(String q, BigDecimal min_price, BigDecimal max_price) {
+    public List<ProductModel> findProductFilterParameters(String q, BigDecimal min_price, BigDecimal max_price) {
 //        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 //        CriteriaQuery<ProductModel> query = cb.createQuery(ProductModel.class);
 //        Root<ProductModel> productModel = query.from(ProductModel.class);
@@ -55,11 +58,41 @@ public class ProductJPARepositoryCustomImpl implements ProductJPARepositoryCusto
             sql.append(max_price);
             sql.append(" ");
         }
-        
+
         log.info("sql [" + sql + "]");
 
+        List<Object> tmp = entityManager.createNativeQuery(sql.toString()).getResultList();
 
-        return entityManager.createNativeQuery(sql.toString()).getResultList();
+        List<ProductModel> newProductsFilter = new ArrayList<>();
+
+        for (int i = 0; i < tmp.size(); i++) {
+            Object[] row = (Object[]) tmp.get(i);
+            ProductModel proMod = new ProductModel();
+            if (row[0] instanceof BigInteger) {
+                BigInteger id = (BigInteger) row[0];
+                proMod.setId(id.longValue());
+                log.info("id [" + id + "]");
+            }
+            if (row[1] instanceof String) {
+                String name = (String) row[1];
+                proMod.setName(name);
+                log.info("name [" + name + "]");
+            }
+            if (row[2] instanceof String) {
+                String description = (String) row[2];
+                proMod.setDescription(description);
+                log.info("description [" + description + "]");
+            }
+            if (row[3] instanceof BigDecimal) {
+                BigDecimal price = (BigDecimal) row[3];
+                proMod.setPrice(price);
+                log.info("price [" + price + "]");
+            }
+
+            newProductsFilter.add(proMod);
+        }
+
+        return newProductsFilter;
 
     }
 

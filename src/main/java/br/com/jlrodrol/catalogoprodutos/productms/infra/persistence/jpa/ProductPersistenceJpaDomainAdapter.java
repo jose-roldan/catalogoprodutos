@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @AllArgsConstructor
 public class ProductPersistenceJpaDomainAdapter implements ProductDomainRepository {
@@ -71,9 +71,10 @@ public class ProductPersistenceJpaDomainAdapter implements ProductDomainReposito
 
     @Override
     public Optional<List<Product>> listarFilter(String q, BigDecimal min_price, BigDecimal max_price) {
-        List<ProductModel> productModelsList = jpa.findRuleByParameters(q,min_price, max_price);
         
-        return Optional.of(productModelsList.stream().map(ProductModel::toDomain).collect(Collectors.toList()));
-        
+        List<ProductModel> productModelsFilterList = jpa.findProductFilterParameters(q,min_price, max_price);
+
+        return Optional.of(productModelsFilterList.stream().map(ProductModel::toDomain).collect(Collectors.toList()));
+
     }
 }

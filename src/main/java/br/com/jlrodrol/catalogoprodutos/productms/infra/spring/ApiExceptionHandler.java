@@ -25,7 +25,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 //@ControllerAdvice
 //public class ApiExceptionHandler extends ResponseEntityExceptionHandler {

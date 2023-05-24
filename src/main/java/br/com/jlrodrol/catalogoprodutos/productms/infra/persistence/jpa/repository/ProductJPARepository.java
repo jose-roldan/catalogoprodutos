@@ -12,7 +12,7 @@ import java.util.Optional;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @Repository
 public interface ProductJPARepository extends JpaRepository<ProductModel, Long>, ProductJPARepositoryCustom {

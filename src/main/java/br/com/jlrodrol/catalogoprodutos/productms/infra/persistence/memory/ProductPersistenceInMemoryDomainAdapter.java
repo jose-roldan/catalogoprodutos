@@ -9,18 +9,15 @@ import br.com.jlrodrol.catalogoprodutos.productms.application.domain.repository.
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @AllArgsConstructor
 public class ProductPersistenceInMemoryDomainAdapter implements ProductDomainRepository {

@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @AllArgsConstructor
 public class ListarProductsService implements ListarProductsUseCase {
@@ -23,6 +23,7 @@ public class ListarProductsService implements ListarProductsUseCase {
     public List<Product> listar() {
 
         return listarProductsOutPort.listar();
+        
     }
 
 }

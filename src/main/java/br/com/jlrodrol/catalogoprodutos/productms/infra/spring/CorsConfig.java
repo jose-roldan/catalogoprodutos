@@ -19,7 +19,7 @@ import java.io.IOException;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @Configuration
 public class CorsConfig extends GenericFilterBean implements Filter {

@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @Configuration
 public class BeanServiceConfig {

@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @AllArgsConstructor
 public class ListarProductsFilterService implements ListarProductsFilterUseCase {
@@ -24,7 +24,9 @@ public class ListarProductsFilterService implements ListarProductsFilterUseCase 
 
     @Override
     public List<Product> listarFilter(String q, BigDecimal min_price, BigDecimal max_price) {
+        
         return listarProductsFilterOutPort.listarFilter(q, min_price, max_price);
+        
     }
 
 }

@@ -12,7 +12,7 @@ import java.util.Optional;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public interface ProductDomainRepository {
 

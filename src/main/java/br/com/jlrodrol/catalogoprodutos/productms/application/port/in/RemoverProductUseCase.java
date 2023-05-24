@@ -6,7 +6,7 @@ package br.com.jlrodrol.catalogoprodutos.productms.application.port.in;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 public interface RemoverProductUseCase {
 

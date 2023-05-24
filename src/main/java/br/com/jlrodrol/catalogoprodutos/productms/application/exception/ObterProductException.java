@@ -8,7 +8,7 @@ import lombok.Getter;
 
 /**
  *
- * @author lemon
+ * @author jose.roldan
  */
 @Getter
 public class ObterProductException extends RuntimeException {
